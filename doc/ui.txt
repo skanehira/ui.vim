@@ -71,7 +71,7 @@ ui#chat#message_prev()				*ui#chat#message_prev()*
   Move cursor to previous message.
   This function called by |<Plug>(ui:chat:prev)|
 
-ui#chat#draw({rows})				*ui#chat#open()*
+ui#chat#draw({rows})				*ui#chat#draw()*
   Draw {rows} to current buffer.
   The {rows} is a list of structures below.
 
@@ -99,8 +99,25 @@ ui#chat#draw({rows})				*ui#chat#open()*
   }
 <
 
+  Chat's UI will be bellow.
+>
+  godzilla | @ゴジラ | 2024-01-01 01:00:00
+  
+  hello
+  my name is godzilla
+  
+  👍1 😂4
+  ─────────────────────────────────────────
+  godzilla | @ゴジラ | 2024-01-02 01:00:00
+  
+  this is my first message
+  
+  👍1
+  ─────────────────────────────────────────
+<
+
 ui#chat#row()					*ui#chat#row()*
-  Returns current row datag
+  Returns current message data.
 
 ui#chat#rows()					*ui#chat#rows()*
   Returns current buffer's rows data.
