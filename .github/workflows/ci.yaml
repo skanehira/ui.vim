@@ -27,8 +27,8 @@ jobs:
       - name: Setup themis
         id: themis
         run: |
-          git clone https://github.com/thinca/vim-themis "$HOME/vim-themis"
-          echo "$HOME/vim-themis/bin" >> "$GITHUB_PATH"
+          git clone https://github.com/thinca/vim-themis $HOME/vim-themis
+          echo $HOME/vim-themis/bin >> $GITHUB_PATH
       - uses: thinca/action-setup-vim@v1
         id: vim
         with:
