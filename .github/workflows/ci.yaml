@@ -24,12 +24,10 @@ jobs:
       - run: git config --global core.autocrlf false
         if: runner.os == 'Windows'
       - uses: actions/checkout@v3
-      - name: Setup themis
-        id: themis
-        shell: bash
-        run: |
-          git clone https://github.com/thinca/vim-themis $HOME/vim-themis
-          echo $HOME/vim-themis/bin >> $GITHUB_PATH
+      - uses: actions/checkout@v2
+        with:
+          repository: thinca/vim-themis
+          path: vim-themis
       - uses: thinca/action-setup-vim@v1
         id: vim
         with:
@@ -42,6 +40,5 @@ jobs:
           vim_type: "Neovim"
           vim_version: "${{ matrix.host_version.nvim }}"
       - name: Test
-        run: |
-          make test
+        run: ./vim-themis/bin/themis -r
         timeout-minutes: 5
