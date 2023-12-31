@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Setup themis
         id: themis
+        shell: bash
         run: |
           git clone https://github.com/thinca/vim-themis $HOME/vim-themis
           echo $HOME/vim-themis/bin >> $GITHUB_PATH
