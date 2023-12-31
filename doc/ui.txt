@@ -1,0 +1,118 @@
+*ui.txt*	a summary
+
+Author: skanehira <sho19921005@gmail.com>
+License : MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+==============================================================================
+CONTENTS					*ui-contents*
+
+INTRODUCTION			|ui-introduction|
+USAGE				|ui-usage|
+INTERFACE			|ui-interface|
+  KEY-MAPPINGS			  |ui-key-mappings|
+  FUNCTIONS			  |ui-functions|
+TODO				|ui-todo|
+CHANGELOG			|ui-changelog|
+
+
+==============================================================================
+INTRODUCTION					*ui-introduction*
+
+*ui* is a Vim plugin that provids some ui like social media's timeline, chat,
+etc.
+
+Latest version:
+https://github.com/skanehira/ui.vim
+
+
+==============================================================================
+USAGE						*ui-usage*
+
+
+
+==============================================================================
+INTERFACE					*ui-interface*
+
+------------------------------------------------------------------------------
+KEY-MAPPINGS					*ui-key-mappings*
+
+<Plug>(ui:chat:next)				*<Plug>(ui:chat:next)*
+  Move cursor to next message.
+
+<Plug>(ui:chat:prev)				*<Plug>(ui:chat:prev)*
+  Move cursor to previous message.
+
+------------------------------------------------------------------------------
+FUNCTIONS					*ui-functions*
+
+ui#chat#message_next()				*ui#chat#message_next()*
+  Move cursor to next message.
+  This function called by |<Plug>(ui:chat:next)|
+
+ui#chat#message_prev()				*ui#chat#message_prev()*
+  Move cursor to previous message.
+  This function called by |<Plug>(ui:chat:prev)|
+
+ui#chat#draw({rows})				*ui#chat#open()*
+  Draw {rows} to current buffer.
+  The {rows} is a list of structures below.
+
+>
+  {
+    "text": "hello\nmy name is godzilla",
+    "user": {
+      "name": "godzilla",
+      "screen_name": "ゴジラ",
+      "url": "https://example.com/godzilla",
+    },
+    "metadata": {
+      "created_at_str": "2024-01-01 01:00:00",
+    },
+    "reactions": [
+      {
+        "action": "👍",
+        "count": 1,
+      },
+      {
+        "action": "😂",
+        "count": 4,
+      },
+    ]
+  }
+<
+
+ui#chat#row()					*ui#chat#row()*
+  Returns current row datag
+
+ui#chat#rows()					*ui#chat#rows()*
+  Returns current buffer's rows data.
+
+==============================================================================
+TODO						*ui-todo*
+
+
+
+==============================================================================
+CHANGELOG					*ui-changelog*
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
