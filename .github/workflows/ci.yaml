@@ -34,6 +34,7 @@ jobs:
         with:
           vim_type: "Vim"
           vim_version: "${{ matrix.host_version.vim }}"
+          download: "never"
       - uses: thinca/action-setup-vim@v1
         id: nvim
         with:
