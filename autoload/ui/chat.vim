@@ -79,7 +79,7 @@ function! s:make_lines(row) abort
   let lines += [
         \ "",
         \ reactions,
-        \ repeat("─", width-2),
+        \ repeat("─", width),
         \ ]
 
   return lines
