@@ -65,7 +65,7 @@ function! s:make_lines(row) abort
 
   let head = join([
         \   a:row.user.name,
-        \   "@" .. a:row.user.screen_name,
+        \   a:row.user.screen_name,
         \   metadata
         \ ], " | ")
 
