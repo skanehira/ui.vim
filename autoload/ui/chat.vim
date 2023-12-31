@@ -1,4 +1,4 @@
-" chat
+" chat.vim
 " Author: skanehira
 " License: MIT
 
@@ -25,7 +25,7 @@
 "     },
 "   ]
 " }
-function! ui#chat#open(rows) abort
+function! ui#chat#draw(rows) abort
   let b:rows = a:rows
   call s:draw()
   call s:define_plugin_keymaps()
