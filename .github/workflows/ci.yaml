@@ -1,0 +1,36 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+jobs:
+  test:
+    strategy:
+      matrix:
+        runner:
+          - windows-latest
+          - macos-latest
+          - ubuntu-22.04
+        host_version:
+          - vim: "v9.0.0472"
+            nvim: "v0.8.0"
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - run: git config --global core.autocrlf false
+        if: runner.os == 'Windows'
+      - uses: actions/checkout@v3
+      - uses: thinca/action-setup-vim@v1
+        id: vim
+        with:
+          vim_type: "Vim"
+          vim_version: "${{ matrix.host_version.vim }}"
+          download: "never"
+      - name: Test
+        run: |
+          make test
+        timeout-minutes: 5
