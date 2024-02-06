@@ -25,8 +25,15 @@
 "     },
 "   ]
 " }
-function! ui#chat#draw(rows) abort
+function! ui#chat#draw(winid, rows) abort
+  let found = win_gotoid(a:winid)
+  " if not found specified window, do nothing
+  if found ==# 0
+    return
+  endif
+
   let b:rows = a:rows
+
   call s:draw()
   call s:define_plugin_keymaps()
 endfunction

@@ -43,7 +43,7 @@ let s:rows = [
       \ ]
 
 function s:suite.before_each()
-  call ui#chat#draw(s:rows)
+  call ui#chat#draw(win_getid(), s:rows)
 endfunction
 
 function s:suite.chat_ui()
