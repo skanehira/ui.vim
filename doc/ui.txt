@@ -71,8 +71,9 @@ ui#chat#message_prev()				*ui#chat#message_prev()*
   Move cursor to previous message.
   This function called by |<Plug>(ui:chat:prev)|
 
-ui#chat#draw({rows})				*ui#chat#draw()*
-  Draw {rows} to current buffer.
+ui#chat#draw({winid}, {rows})				*ui#chat#draw()*
+  Draw {rows} to Specified {winid}.
+  If window cannot found, then do nothing.
   The {rows} is a list of structures below.
 
 >
